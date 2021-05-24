@@ -44,6 +44,8 @@ const publish = module.exports = {
 			});
 		}
 
+		// eslint-disable-next-line no-console
+		console.log("STORY READY");
 		return output;
 	},
 

@@ -136,7 +136,7 @@ const storyStore = (module.exports = {
 			name provided), even if you rename one to a name a previous one used
 			to have.
 			*/
-			
+
 			let story = getStoryById(state, storyId);
 			let newPassage = Object.assign(
 				{
@@ -169,6 +169,10 @@ const storyStore = (module.exports = {
 			story.lastUpdate = new Date();
 			console.log(story);
 			console.log(story.passages);
+
+			// TODO: Log to database
+			// eslint-disable-next-line no-console
+			console.log("Adding a passage to story " + this.story.id + " pass: " + newPassage);
 		},
 
 		UPDATE_PASSAGE_IN_STORY(state, storyId, passageId, props) {
@@ -203,15 +207,23 @@ const storyStore = (module.exports = {
 
 			Object.assign(passage, props);
 			story.lastUpdate = new Date();
+
+			// TODO: Log to database
+			// eslint-disable-next-line no-console
+			console.log("Updating a passage to story " + story.id + " pass: " + passageId)
 		},
 
 		DELETE_PASSAGE_IN_STORY(state, storyId, passageId) {
 			let story = getStoryById(state, storyId);
 
+			// TODO: Log to database
+			// eslint-disable-next-line no-console
+			console.log("Deleting a passage to story " + this.story.id + " pass: " + passageId);
 			story.passages = story.passages.filter(
 				passage => passage.id !== passageId
 			);
 			story.lastUpdate = new Date();
+
 		}
 	},
 

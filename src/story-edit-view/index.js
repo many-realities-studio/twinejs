@@ -173,7 +173,7 @@ module.exports = Vue.extend({
 				Change the window's scroll position so that the same logical
 				coordinates are at its center.
 				*/
-				
+
 				const halfWidth = window.innerWidth / 2;
 				const halfHeight = window.innerHeight / 2;
 				const logCenterX = (window.scrollX + halfWidth) / old;
@@ -289,17 +289,17 @@ module.exports = Vue.extend({
 			}
 
 			/* Add it to our collection. */
-
 			this.createPassage(this.story.id, { name, left, top });
 
 			/*
 			Then position it so it doesn't overlap any others, and save it
 			again.
 			*/
-			
+			let pass = this.story.passages.find(p => p.name === name)
+
 			this.positionPassage(
 				this.story.id,
-				this.story.passages.find(p => p.name === name).id,
+				pass.id,
 				this.gridSize
 			);
 		},
@@ -309,13 +309,13 @@ module.exports = Vue.extend({
 		webkitmouseforcedown event. At the time of writing, this is a
 		Mac-specific feature, but can be extended once standards catch up.
 		*/
-		
+
 		onMouseForceDown(e) {
 			let top = (e.pageY / this.story.zoom) -
 				(passageDefaults.height / 2);
 			let left = (e.pageX / this.story.zoom) -
 				(passageDefaults.width / 2);
-			
+
 			this.createPassage(null, top, left);
 		},
 
@@ -360,7 +360,7 @@ module.exports = Vue.extend({
 				case 187:
 					this.zoomOut();
 					break;
-				
+
 				/* Minus key */
 
 				case 189:
@@ -390,7 +390,11 @@ module.exports = Vue.extend({
 						buttonClass: 'danger'
 					}).then(() => {
 						toDelete.forEach(
-							p => this.deletePassage(this.story.id, p.id)
+							p => {
+								// eslint-disable-next-line no-console
+								console.log("Deleting a passage. Story: " + this.story.id + " passage " + p.id)
+								this.deletePassage(this.story.id, p.id)
+							}
 						);
 					});
 					break;
@@ -408,7 +412,7 @@ module.exports = Vue.extend({
 		'highlight-regexp-change'(value) {
 			this.highlightRegexp = value;
 		},
-		
+
 		/*
 		A hook into our createPassage() method for child components.
 		*/

@@ -72,7 +72,7 @@ module.exports = Vue.extend({
 					passage.id !== this.passage.id
 			));
 		},
-		
+
 		autocompletions() {
 			return this.parentStory.passages.map(passage => passage.name);
 		}
@@ -149,6 +149,10 @@ module.exports = Vue.extend({
 		},
 
 		dialogDestroyed() {
+			// TODO Update text when dialogue is closed...
+			// eslint-disable-next-line no-console
+			console.log("Closing code editor...");
+
 			this.$destroy();
 		},
 
@@ -237,6 +241,9 @@ module.exports = Vue.extend({
 		else {
 			this.$refs.codemirror.$cm.execCommand('goDocEnd');
 		}
+		// TODO Update text when dialogue is closed...
+		// eslint-disable-next-line no-console
+		console.log("Opening code editor...")
 	},
 
 	destroyed() {
