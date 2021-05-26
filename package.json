@@ -23,7 +23,7 @@
 		"pot": "node scripts/extract-pot.js",
 		"starttwine": "npm start --prefix modules/twine/twinejs",
 		"buildharlowe": "cd modules/twine/harlowe && make",
-		"start": "cd modules/twine/twinejs && npm start & webpack-dev-server",
+		"start": "concurrently \"npm run buildharlowe\" \"npm run starttwine\" \"webpack-dev-server\"",
 		"test": "jest",
 		"test:watch": "jest --watch"
 	},
