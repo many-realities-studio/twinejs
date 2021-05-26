@@ -21,7 +21,9 @@
 		"lint": "eslint src/ || exit 0",
 		"lint:noisy": "eslint src/",
 		"pot": "node scripts/extract-pot.js",
-		"start": "cd cnwebpack-dev-server",
+		"starttwine": "cd modules/twine/twinejs && npm start",
+		"buildharlowe": "cd modules/twine/harlowe && make",
+		"start": "cd modules/twine/twinejs && npm start & webpack-dev-server",
 		"test": "jest",
 		"test:watch": "jest --watch"
 	},
