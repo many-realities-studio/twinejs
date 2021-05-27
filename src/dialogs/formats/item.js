@@ -79,6 +79,7 @@ module.exports = Vue.extend({
 				);
 			}
 			else {
+        console.log(					{ name: this.format.name, version: this.format.version }          )
 				this.setPref(
 					'defaultFormat',
 					{ name: this.format.name, version: this.format.version }

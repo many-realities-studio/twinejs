@@ -7,8 +7,8 @@ const semverUtils = require('semver-utils');
 
 module.exports = store => {
 	const latestVersions = {};
-
 	store.state.storyFormat.formats.forEach(format => {
+    console.log(format)
 		if (!format.version) {
 			return;
 		}

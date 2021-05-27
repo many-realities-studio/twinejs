@@ -138,7 +138,10 @@ module.exports = Vue.extend({
 		for (let i = 0; i < tabs.length; i++) {
 			dialogTitle.appendChild(tabs[i]);
 		}
-
+    // this.loadFormat(
+    //   this.allFormats[1].name,
+    //   this.allFormats[1].version
+    // )
 		this.loadNext();
 	},
 

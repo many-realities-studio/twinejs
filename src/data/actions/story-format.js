@@ -177,59 +177,11 @@ const actions = (module.exports = {
 
 		const builtinFormats = [
 			{
-				name: 'Chapbook',
-				url: 'story-formats/chapbook-1.2.1/format.js',
-				version: '1.2.1',
-				userAdded: false
-			},
-			{
-				name: 'Harlowe',
-				url: 'story-formats/harlowe-1.2.4/format.js',
-				version: '1.2.4',
-				userAdded: false
-			},
-			{
-				name: 'Harlowe',
-				url: 'story-formats/harlowe-2.1.0/format.js',
-				version: '2.1.0',
-				userAdded: false
-			},
-			{
 				name: 'Harlowe',
 				url: 'story-formats/harlowe-3.2.2/format.js',
 				version: '3.2.2',
 				userAdded: false
 			},
-			{
-				name: 'Paperthin',
-				url: 'story-formats/paperthin-1.0.0/format.js',
-				version: '1.0.0',
-				userAdded: false
-			},
-			{
-				name: 'Snowman',
-				url: 'story-formats/snowman-1.4.0/format.js',
-				version: '1.4.0',
-				userAdded: false
-			},
-			{
-				name: 'Snowman',
-				url: 'story-formats/snowman-2.0.2/format.js',
-				version: '2.0.2',
-				userAdded: false
-			},
-			{
-				name: 'SugarCube',
-				url: 'story-formats/sugarcube-1.0.35/format.js',
-				version: '1.0.35',
-				userAdded: false
-			},
-			{
-				name: 'SugarCube',
-				url: 'story-formats/sugarcube-2.34.1/format.js',
-				version: '2.34.1',
-				userAdded: false
-			}
 		];
 
 		builtinFormats.forEach(builtin => {
@@ -248,13 +200,13 @@ const actions = (module.exports = {
 		Set default formats if not already set, or if an unversioned preference
 		exists.
 		*/
-
-		if (typeof store.state.pref.defaultFormat !== 'object') {
+    console.log("Setting default story format...")
+		// if (typeof store.state.pref.defaultFormat !== 'object') {
 			setPref(store, 'defaultFormat', {
 				name: 'Harlowe',
 				version: '3.2.2'
 			});
-		}
+		// }
 
 		if (typeof store.state.pref.proofingFormat !== 'object') {
 			setPref(store, 'proofingFormat', {

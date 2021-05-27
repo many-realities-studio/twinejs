@@ -85,7 +85,7 @@ const actions = (module.exports = {
 
 	repairStories(store) {
 		const latestVersions = latestFormatVersions(store);
-
+    // return;
 		store.state.story.stories.forEach(story => {
 			/*
 			Reset stories without any story format.

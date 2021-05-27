@@ -172,7 +172,7 @@ const storyStore = (module.exports = {
 
 			// TODO: Log to database
 			// eslint-disable-next-line no-console
-			console.log("Adding a passage to story " + this.story.id + " pass: " + newPassage);
+			console.log("Adding a passage to story pass: " + newPassage);
 		},
 
 		UPDATE_PASSAGE_IN_STORY(state, storyId, passageId, props) {

@@ -48,6 +48,7 @@ if (typeof userLocale === 'string') {
 	/* Load the locale, then start the application. */
 
 	locale.loadViaAjax(userLocale.toLowerCase()).then(() => {
+		// TwineRouter.start(TwineApp, '#main');
 		TwineRouter.start(TwineApp, '#main');
 	});
 } else {
