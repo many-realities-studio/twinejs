@@ -6,24 +6,24 @@ const jsonp = require('../jsonp');
 const semverUtils = require('semver-utils');
 const latestFormatVersions = require('../latest-format-versions');
 const locale = require('../../locale');
-const {setPref} = require('./pref');
+const { setPref } = require('./pref');
 
 const actions = (module.exports = {
-	createFormat({dispatch}, props) {
+	createFormat({ dispatch }, props) {
 		dispatch('CREATE_FORMAT', props);
 	},
 
-	updateFormat({dispatch}, id, props) {
+	updateFormat({ dispatch }, id, props) {
 		dispatch('UPDATE_FORMAT', id, props);
 	},
 
-	deleteFormat({dispatch}, id) {
+	deleteFormat({ dispatch }, id) {
 		dispatch('DELETE_FORMAT', id);
 	},
 
 	createFormatFromUrl(store, url) {
 		return new Promise((resolve, reject) => {
-			jsonp(url, {name: 'storyFormat', timeout: 2000}, (err, data) => {
+			jsonp(url, { name: 'storyFormat', timeout: 2000 }, (err, data) => {
 				if (err) {
 					reject(err);
 					return;
@@ -138,7 +138,7 @@ const actions = (module.exports = {
 
 			jsonp(
 				format.url,
-				{name: 'storyFormat', timeout: 2000},
+				{ name: 'storyFormat', timeout: 2000 },
 				(err, data) => {
 					if (err) {
 						reject(err);
@@ -178,8 +178,8 @@ const actions = (module.exports = {
 		const builtinFormats = [
 			{
 				name: 'Harlowe',
-				url: 'story-formats/harlowe-3.2.2/format.js',
-				version: '3.2.2',
+				url: 'story-formats/harlowe-3.2.3/dist/format.js',
+				version: '3.2.3',
 				userAdded: false
 			},
 		];
@@ -200,12 +200,12 @@ const actions = (module.exports = {
 		Set default formats if not already set, or if an unversioned preference
 		exists.
 		*/
-    console.log("Setting default story format...")
+		console.log("Setting default story format...")
 		// if (typeof store.state.pref.defaultFormat !== 'object') {
-			setPref(store, 'defaultFormat', {
-				name: 'Harlowe',
-				version: '3.2.2'
-			});
+		setPref(store, 'defaultFormat', {
+			name: 'Harlowe',
+			version: '3.2.3'
+		});
 		// }
 
 		if (typeof store.state.pref.proofingFormat !== 'object') {
