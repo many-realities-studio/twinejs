@@ -1,5 +1,5 @@
 {
-	"name": "Twine",
+	"name": "twine",
 	"version": "2.3.14",
 	"author": "Chris Klimas <chris@twinery.org>",
 	"description": "a GUI for creating nonlinear stories",
@@ -21,7 +21,8 @@
 		"lint": "eslint src/ || exit 0",
 		"lint:noisy": "eslint src/",
 		"pot": "node scripts/extract-pot.js",
-		"start": "webpack-dev-server --host 0.0.0.0",
+		"start": "webpack-dev-server",
+    "start-expose": "webpack-dev-server --host 0.0.0.0",
 		"test": "jest",
 		"test:watch": "jest --watch"
 	},

@@ -152,7 +152,7 @@ module.exports = Vue.extend({
 			// TODO Update text when dialogue is closed...
 			// eslint-disable-next-line no-console
 			console.log("Closing code editor...");
-
+      window.top.postMessage({ eventId: 2, passageId: this.passage.id}, "*");
 			this.$destroy();
 		},
 
