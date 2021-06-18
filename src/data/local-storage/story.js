@@ -47,7 +47,7 @@ const story = module.exports = {
 		We have to remove the passages property before serializing the story,
 		as those are serialized under separate keys.
 		*/
-
+      console.log("SAVING STORY!!!",story)
 		window.localStorage.setItem(
 			'twine-stories-' + story.id,
 			JSON.stringify(
