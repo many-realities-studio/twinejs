@@ -218,7 +218,7 @@ const storyStore = (module.exports = {
 
 			// TODO: Log to database
 			// eslint-disable-next-line no-console
-			console.log("Deleting a passage to story " + this.story.id + " pass: " + passageId);
+			console.log("Deleting a passage to story " + story.id + " pass: " + passageId);
 			story.passages = story.passages.filter(
 				passage => passage.id !== passageId
 			);
