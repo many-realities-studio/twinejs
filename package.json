@@ -22,7 +22,7 @@
 		"lint:noisy": "eslint src/",
 		"pot": "node scripts/extract-pot.js",
 		"start": "webpack-dev-server",
-    "start-expose": "webpack-dev-server --host 0.0.0.0",
+		"start-expose": "webpack-dev-server --host 0.0.0.0",
 		"test": "jest",
 		"test:watch": "jest --watch"
 	},

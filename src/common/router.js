@@ -6,14 +6,14 @@ const LocaleView = require('../locale/view');
 const StoryEditView = require('../story-edit-view');
 const StoryListView = require('../story-list-view');
 const WelcomeView = require('../welcome');
-const locale = require('../locale'); 
+const locale = require('../locale');
 const { getStoryPlayHtml, getStoryProofingHtml, getStoryTestHtml } = require('./story-html');
 const replaceUI = require('../ui/replace');
 const store = require('../data/store');
 
 Vue.use(VueRouter);
 
-let TwineRouter = new VueRouter();
+let TwineRouter = new VueRouter({ base: "/twine" });
 
 TwineRouter.map({
 	/*  We connect routes with no params directly to a component. */
@@ -37,7 +37,7 @@ TwineRouter.map({
 				'<div><story-list ' +
 				':previously-editing="previouslyEditing"></story-list></div>',
 
-			components: {'story-list': StoryListView},
+			components: { 'story-list': StoryListView },
 
 			data() {
 				return {
@@ -53,10 +53,10 @@ TwineRouter.map({
 		component: {
 			template: '<div><story-edit :story-id="id"></story-edit></div>',
 
-			components: {'story-edit': StoryEditView},
+			components: { 'story-edit': StoryEditView },
 
 			data() {
-				return {id: this.$route.params.id};
+				return { id: this.$route.params.id };
 			}
 		}
 	},
