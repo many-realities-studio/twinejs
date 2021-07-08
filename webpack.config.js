@@ -52,8 +52,8 @@ const config = (module.exports = {
 			{
 				test: /\.less$/,
 				use: [
-					{loader: MiniCssExtractPlugin.loader},
-					{loader: 'css-loader', options: {minimize: isRelease}},
+					{ loader: MiniCssExtractPlugin.loader },
+					{ loader: 'css-loader', options: { minimize: isRelease } },
 					{
 						loader: 'less-loader',
 						options: {
@@ -70,21 +70,21 @@ const config = (module.exports = {
 	},
 	plugins: [
 		new CopyPlugin([
-			{from: 'src/common/img/favicon.ico', to: 'rsrc/favicon.ico'},
-			{from: 'icons/ios-icon-180.png', to: 'rsrc/ios-icon-180.png'},
-			{from: 'story-formats/', to: 'story-formats/'},
-			{from: 'src/locale/view/img', to: 'rsrc/'},
-			{from: 'src/locale/po/*.js', to: 'locale/'}
+			{ from: 'src/common/img/favicon.ico', to: 'rsrc/favicon.ico' },
+			{ from: 'icons/ios-icon-180.png', to: 'rsrc/ios-icon-180.png' },
+			{ from: 'story-formats/', to: 'story-formats/' },
+			{ from: 'src/locale/view/img', to: 'rsrc/' },
+			{ from: 'src/locale/po/*.js', to: 'locale/' }
 		]),
 		new HtmlPlugin({
 			template: './src/index.ejs',
 			package: package,
 			buildNumber: require('./scripts/build-number').number,
 			inject: false,
-			minify: isRelease && {collapseWhitespace: true},
+			minify: isRelease && { collapseWhitespace: true },
 			cdn: useCdn
 		}),
-		new MiniCssExtractPlugin({filename: 'twine.css'}),
+		new MiniCssExtractPlugin({ filename: 'twine.css' }),
 		new PoPlugin({
 			src: 'src/locale/po/*.po',
 			dest: 'locale',
@@ -95,10 +95,10 @@ const config = (module.exports = {
 		})
 	],
 	devServer: {
-    inline: true,
-    host: '127.0.0.1',
-    port: 8080,
-    disableHostCheck: true,
+		inline: true,
+		host: '127.0.0.1',
+		port: 8081,
+		disableHostCheck: true,
 		stats: 'minimal'
 	}
 });
@@ -112,7 +112,7 @@ if (isRelease) {
 		test: /\.js$/,
 		exclude: /node_modules/,
 		loader: 'babel-loader',
-		options: {presets: ['@babel/preset-env']}
+		options: { presets: ['@babel/preset-env'] }
 	});
 }
 
