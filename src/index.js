@@ -26,7 +26,6 @@ const TwineApp = require('./common/app');
 const TwineRouter = require('./common/router');
 
 require('core-js');
-
 /* Start the application after loading the appropriate locale data. */
 
 let userLocale;
@@ -67,8 +66,8 @@ if (typeof userLocale === 'string') {
 
 			notify(
 				'Your locale preference has been reset to English due ' +
-					'to a technical problem.<br>Please change it with the ' +
-					'<b>Language</b> option in the story list.',
+				'to a technical problem.<br>Please change it with the ' +
+				'<b>Language</b> option in the story list.',
 				'danger'
 			);
 		});

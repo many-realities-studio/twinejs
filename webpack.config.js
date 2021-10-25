@@ -20,6 +20,7 @@ const config = (module.exports = {
 			'dist',
 			useCdn ? 'web-cdn' : useElectron ? 'web-electron' : 'web'
 		),
+		publicPath: '/twine/',
 		filename: 'twine.js'
 	},
 	module: {
@@ -98,6 +99,14 @@ const config = (module.exports = {
 		inline: true,
 		host: '127.0.0.1',
 		port: 8081,
+		client: {
+			webSocketURL: {
+				hostname: 'localhost',
+				pathname: '/twine/',
+				port: 4001,
+				protocol: 'ws',
+			},
+		},
 		disableHostCheck: true,
 		stats: 'minimal'
 	}
