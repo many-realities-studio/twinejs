@@ -18,20 +18,23 @@ const locale = require('../locale');
 const windows = {};
 
 function openWindow(url) {
-	if (windows[url]) {
-		try {
-			windows[url].focus();
-			windows[url].location.reload();
-			return;
-		} catch (e) {
-			/*
-			Fall through: try opening the window as usual. The problem probably
-			is that the window has since been closed by the user.
-			*/
-		}
-	}
+	// Playing twine story...
+	window.top.postMessage({ eventId: 3, url }, "*");
+	console.log("Playing! 5 !")
+	// if (windows[url]) {
+	// 	try {
+	// 		windows[url].focus();
+	// 		windows[url].location.reload();
+	// 		return;
+	// 	} catch (e) {
+	// 		/*
+	// 		Fall through: try opening the window as usual. The problem probably
+	// 		is that the window has since been closed by the user.
+	// 		*/
+	// 	}
+	// }
 
-	windows[url] = window.open(url, url.replace(/\s/g, '_'));
+	// windows[url] = window.open(url, url.replace(/\s/g, '_'));
 }
 
 module.exports = {
