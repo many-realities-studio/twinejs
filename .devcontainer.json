@@ -1,0 +1,9 @@
+{
+  "name": "Twine",
+  "dockerComposeFile": ["../../../../docker-compose.dev.yml"],
+  "service": "twine",
+  "shutdownAction": "none",
+  "extensions": [],
+  // Open the sub-folder with the source code
+  "workspaceFolder": "/usr/src/app/"
+}
