@@ -97,10 +97,12 @@ const config = (module.exports = {
 	],
 	devServer: {
 		host: '127.0.0.1',
-		port: 8081
-		// disableHostCheck: true,
+		port: 8081,
+		disableHostCheck: true,
 		// stats: 'minimal'
+		stats: 'minimal'
 	}
+	},
 });
 
 if (isRelease) {
