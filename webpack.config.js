@@ -102,8 +102,7 @@ const config = (module.exports = {
 		// stats: 'minimal'
 		stats: 'minimal'
 	}
-	},
-});
+	});
 
 if (isRelease) {
 	/*
