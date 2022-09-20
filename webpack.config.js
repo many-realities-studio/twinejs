@@ -96,13 +96,13 @@ const config = (module.exports = {
 		})
 	],
 	devServer: {
-		inline: true,
 		host: '127.0.0.1',
 		port: 8081,
 		disableHostCheck: true,
+		// stats: 'minimal'
 		stats: 'minimal'
 	}
-});
+	});
 
 if (isRelease) {
 	/*
