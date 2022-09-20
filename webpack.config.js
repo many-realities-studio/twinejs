@@ -99,14 +99,6 @@ const config = (module.exports = {
 		inline: true,
 		host: '127.0.0.1',
 		port: 8081,
-		client: {
-			webSocketURL: {
-				hostname: 'localhost',
-				pathname: '/twine/',
-				port: 4001,
-				protocol: 'ws',
-			},
-		},
 		disableHostCheck: true,
 		stats: 'minimal'
 	}
