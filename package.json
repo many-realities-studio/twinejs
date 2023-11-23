@@ -22,7 +22,7 @@
 		"lint:noisy": "eslint src/",
 		"pot": "node scripts/extract-pot.js",
 		"start": "webpack-dev-server",
-		"start-expose": "webpack-dev-server --client-web-socket-url ws://0.0.0.0:4001/twine/",
+		"start-expose": "webpack-dev-server --host 0.0.0.0 --client-web-socket-url ws://0.0.0.0:4001/twine/",
 		"test": "jest",
 		"test:watch": "jest --watch"
 	},
